@@ -1,0 +1,12 @@
+<h1>total groups: <%= @groups.size %> </h1>
+
+  <tbody>
+  <% @groups.each do |group| %>
+    <tr>
+      <td><%= link_to "#{group.name}", group %></td>
+      <td><%= group.created_at.strftime("%b %d, %Y").downcase %></td>
+    </tr>
+  <% end %>
+  </tbody>
+  <%= button_to 'add new group', new_group_path, method: :get, class: 'btn btn-primary add-new-group' %>
+  <%= button_to 'back', current_user, method: :get, class: 'btn btn-secondary' %>

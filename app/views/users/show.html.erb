@@ -1,2 +1,3 @@
 <%= image_tag(@user.image) if @user.image.attached? %>
 <%= @user.username %>
+<%= link_to "All groups", groups_path %>

@@ -1,0 +1,5 @@
+<%= form_with(model: group, local: true) do |form| %>
+  <%= form.label :name %>
+  <%= form.text_field :name, placeholder: "Group name" %>
+  <%= form.submit class: "btn btn-primary" %>
+<% end %>
