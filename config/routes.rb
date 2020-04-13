@@ -6,5 +6,7 @@ Rails.application.routes.draw do
   delete '/logout', to: 'sessions#destroy'
   resources :users
   resources :groups
+  resources :practices
+  get  '/not_group', to: 'practices#not_group'
 
 end

@@ -1,0 +1,12 @@
+<%= form_with(model: practice, lcoal: true) do |f| %>
+  <%= f.label :name %>
+  <%= f.text_field :name, placeholder: "Practice of?" %>
+  <%= f.label :hours %>
+  <%= f.text_field :hours, placeholder: "Duration" %>
+  <%= f.label :group %>
+  <% Group.all.each do |group| %>
+          <%= check_box_tag "practice[group_ids][]", group.id, @practice.group_ids.include?(group.id) %>
+          <%= group.name %>
+  <% end %>
+  <%= f.submit  class: "btn btn-primary"%>
+<% end %>
