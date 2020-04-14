@@ -46,8 +46,8 @@ ActiveRecord::Schema.define(version: 2020_04_13_170249) do
   end
 
   create_table "practice_groups", force: :cascade do |t|
-    t.bigint "practice_id"
-    t.bigint "group_id"
+    t.bigint "practice_id", null: false
+    t.bigint "group_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["group_id"], name: "index_practice_groups_on_group_id"
@@ -57,10 +57,10 @@ ActiveRecord::Schema.define(version: 2020_04_13_170249) do
   create_table "practices", force: :cascade do |t|
     t.string "name"
     t.integer "hours"
-    t.bigint "user_id"
+    t.bigint "coach_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.index ["user_id"], name: "index_practices_on_user_id"
+    t.index ["coach_id"], name: "index_practices_on_coach_id"
   end
 
   create_table "users", force: :cascade do |t|
@@ -72,4 +72,7 @@ ActiveRecord::Schema.define(version: 2020_04_13_170249) do
 
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
   add_foreign_key "groups", "users"
+  add_foreign_key "practice_groups", "groups"
+  add_foreign_key "practice_groups", "practices"
+  add_foreign_key "practices", "users", column: "coach_id"
 end

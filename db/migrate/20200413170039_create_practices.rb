@@ -3,9 +3,10 @@ class CreatePractices < ActiveRecord::Migration[6.0]
     create_table :practices do |t|
       t.string :name
       t.integer :hours
-      t.belongs_to :user
+      t.references :coach, index: true
 
       t.timestamps
     end
+    add_foreign_key :practices, :users, column: :coach_id
   end
 end

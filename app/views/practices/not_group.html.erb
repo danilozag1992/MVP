@@ -6,7 +6,7 @@
   </thead>
   <tbody>
   <td>
-    <% @practices.each do |practice| %>
+    <% @practice_not_group.each do |practice| %>
       <%= link_to "#{practice.name}", practice %>
       </td>
       <td>
@@ -18,5 +18,5 @@
     <% end %>
     </tbody>
 </table>
-  <%= button_to 'add new practice', new_practice_path, method: :get, class: 'btn btn-primary' %>
-  <%= button_to 'back', current_user, method: :get, class: 'btn btn-secondary' %>
+<%= button_to 'Scheduale Practice', new_practice_path, method: :get, class: 'btn btn-primary' %>
+<%= button_to 'back', current_user, method: :get, class: 'btn btn-primary' %>

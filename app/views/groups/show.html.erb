@@ -1,8 +1,11 @@
 <%= @group.name %>
 <% if !(@group.user.id == current_user.id) %>
   <%= link_to 'Back', groups_path %>
+  <%= render partial: "show_practices", locals: { practices: @group.practices, allow_change: true} %>
 <% else %>
-  <%= link_to "Delete", @group, method: :delete %>
-  <%= link_to "Edit", edit_group_path(@group) %>
-  <%= link_to 'Back', groups_path %>
+  <%= render partial: "show_practices", locals: { practices: @group.practices, allow_change: true} %>
+  <%= button_to "Delete", @group, method: :delete %>
+  <%= button_to "Edit", edit_group_path(@group) %>
+  <%= button_to 'Add Practice', new_practice_path, method: :get, class: 'btn btn-primary' %>
+  <%= button_to 'Back', groups_path %>
 <% end %>

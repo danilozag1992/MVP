@@ -1,0 +1,20 @@
+<table>
+  <thead>
+  <tr>
+    <th>Practice</th>
+    <th>Duration</th>
+    <th>Created</th>
+    <th>Coach</th>
+  </tr>
+  </thead>
+  <tbody>
+  <% practices.each do |practice| %>
+    <tr>
+      <td><%= link_to "#{practice.name}", practice %></td>
+      <td><%= practice.hours %> hs</td>
+      <td><%= practice.created_at.strftime("%b %d, %Y").downcase %></td>
+      <td><%= User.find_by(id: practice.user_id).name %></td>
+    </tr>
+  <% end %>
+  </tbody>
+</table>
