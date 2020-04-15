@@ -9,7 +9,7 @@
   <tbody>
   <% practices.each do |practice| %>
     <tr>
-      <td><%= link_to "#{practice.name}", practice%></td>
+      <td><%= link_to "#{practice.name}", practice %></td>
       <td><%= practice.hours %> hs</td>
       <td><%= practice.created_at.strftime("%b %d, %Y").downcase %></td>
     </tr>

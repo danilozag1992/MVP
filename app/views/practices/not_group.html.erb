@@ -1,1 +1,2 @@
 <%= render partial: "multiply_practice", locals: {practices: @practice_not_group, allow_change: true} %>
+<%= button_to 'Add Practice', new_practice_path, method: :get, class: "btn btn-primary btn-lg btn-block" %>

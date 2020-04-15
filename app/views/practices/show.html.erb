@@ -1,7 +1,7 @@
 <h1>
-<%= @practice.name %>
-<%= @practice.hours %>
+  <%= @practice.name %>
+  <%= @practice.hours %>
 </h1>
 <%= button_to 'edit', edit_practice_path(@practice), method: :get, class: "btn btn-primary btn-lg btn-block" %>
-<%= button_to 'delete', @practice, method: :delete, class: "btn btn-primary btn-lg btn-block", data: { confirm: 'For real?' } %>
+<%= button_to 'delete', @practice, method: :delete, class: "btn btn-primary btn-lg btn-block", data: {confirm: 'For real?'} %>
 <%= button_to 'back', request.referrer, method: :get, class: "btn btn-primary btn-lg btn-block" %>

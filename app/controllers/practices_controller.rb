@@ -6,7 +6,11 @@ class PracticesController < ApplicationController
   end
 
   def index
-    @practices = current_user.practices.with_group
+    @practices = current_user.practices
+  end
+
+  def not_group
+    @practice_not_group = current_user.practices.without_group
   end
 
   def create
@@ -25,10 +29,6 @@ class PracticesController < ApplicationController
     end
   end
 
-  def not_group
-    @practice_not_group = current_user.practices.without_group
-  end
-
   def update
     if @practice.update(practice_params)
       if params[:practice][:group_ids]
@@ -41,9 +41,9 @@ class PracticesController < ApplicationController
     end
   end
 
-  def edit ;end
+  def edit; end
 
-  def show ;end
+  def show; end
 
   def destroy
     @practice.destroy

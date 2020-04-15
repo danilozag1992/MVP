@@ -1,5 +1,5 @@
 <h1>
-<%= @group.name %>
+  <%= @group.name %>
 </h1>
 <table class="table">
   <thead>
@@ -13,14 +13,14 @@
   <% @group.practices.each do |practice| %>
     <tr>
       <td><%= link_to practice.name, practice_path(practice) %></td>
-      <td><%= User.find_by(id: practice.coach_id).username%></td>
+      <td><%= User.find_by(id: practice.coach_id).username %></td>
     </tr>
   <% end %>
   </tbody>
 </table>
 <div>
   <%= button_to "Delete", @group, method: :delete, class: "btn btn-primary btn-lg btn-block" %>
-  <%= button_to "Edit", edit_group_path(@group),method: :get, class: "btn btn-primary btn-lg btn-block" %>
+  <%= button_to "Edit", edit_group_path(@group), method: :get, class: "btn btn-primary btn-lg btn-block" %>
   <%= button_to 'Add Practice', new_practice_path, method: :get, class: "btn btn-primary btn-lg btn-block" %>
   <%= button_to 'Back', groups_path %>
 </div>
