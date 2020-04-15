@@ -6,7 +6,7 @@ class PracticesController < ApplicationController
   end
 
   def index
-    @practices = current_user.practices
+    @practices = current_user.practices.with_group
   end
 
   def create
@@ -26,7 +26,7 @@ class PracticesController < ApplicationController
   end
 
   def not_group
-    @practice_not_group = current_user.practices.includes(:practice_groups).where(practice_groups: { group_id: nil })
+    @practice_not_group = current_user.practices.without_group
   end
 
   def update

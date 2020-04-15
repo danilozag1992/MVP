@@ -39,7 +39,7 @@ class GroupsController < ApplicationController
     @group = Group.find(params[:id])
   end
   def group_params
-    params.require(:group).permit(:name, :user_id, :icon)
+    params.require(:group).permit(:name, :user_id)
   end
   def correct_user
     @group = current_user.groups.find_by(id: params[:id])
