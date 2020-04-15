@@ -1,14 +1,10 @@
 <h1>Sign up!</h1>
-<div>
-  <%= form_with(model: @user, local: true) do |f| %>
-    <div>
-    <%= f.file_field :image %>
-    </div>
-    <div>
+<%= form_with(model: @user, local: true) do |f| %>
+  <div class="form-group">
+    <%= f.file_field :image, class: "form-control" %>
     <%= f.label :username %>
-    <%= f.text_field :username %>
-    </div>
+    <%= f.text_field :username, class: "form-control" %>
     <%= f.submit "Create my account" %>
-  <% end %>
-  <p>If you already have account, please <%= link_to 'Login', login_path  %></p>
-</div>
+  </div>
+<% end %>
+<p>If you already have account, please <%= link_to 'Login', login_path %></p>

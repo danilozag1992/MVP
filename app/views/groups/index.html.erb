@@ -1,5 +1,11 @@
 <h1>total groups: <%= @groups.size %> </h1>
-
+<table class="table">
+  <thead>
+  <tr>
+    <th scope="col">name</th>
+    <th scope="col">date</th>
+  </tr>
+  </thead>
   <tbody>
   <% @groups.each do |group| %>
     <tr>
@@ -8,5 +14,8 @@
     </tr>
   <% end %>
   </tbody>
+</table>
   <%= button_to 'add new group', new_group_path, method: :get, class: 'btn btn-primary add-new-group' %>
-  <%= button_to 'back', current_user, method: :get, class: 'btn btn-secondary' %>
+<h3>
+  <%= link_to 'Back', current_user, method: :get %>
+</h3>

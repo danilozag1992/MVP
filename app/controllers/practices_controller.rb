@@ -16,7 +16,7 @@ class PracticesController < ApplicationController
         flash[:notice] = "Created with group"
         redirect_to practices_path
       else
-        flash[:notice] = "Created with a group"
+        flash[:notice] = "Created without a group"
         redirect_to not_group_path
       end
     else
@@ -26,21 +26,18 @@ class PracticesController < ApplicationController
   end
 
   def not_group
-    @practice_not_group = current_user.practices.includes(:practice_groups).where(practice_groups: {group_id: nil})
+    @practice_not_group = current_user.practices.includes(:practice_groups).where(practice_groups: { group_id: nil })
   end
 
   def update
     if @practice.update(practice_params)
       if params[:practice][:group_ids]
-        flash[:notice] = "Updated!"
-        redirect_to practices_path
+        redirect_to practices_path, notice: 'Updated'
       else
-        flash[:notice] = "Updated!"
-        redirect_to not_group_path
+        redirect_to not_group_path, notice: 'project updated!'
       end
     else
-      flash[:danger] = 'Update failed'
-      redirect_to 'edit'
+      redirect_to 'edit', danger: 'project update failed.'
     end
   end
 
@@ -57,7 +54,7 @@ class PracticesController < ApplicationController
   private
 
   def practice_params
-    params.require(:practice).permit(:name, :hours, :user_id, :group_ids)
+    params.require(:practice).permit(:name, :hours, :coach_id, :group_ids)
   end
 
   def set_practice

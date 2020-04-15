@@ -1,12 +1,16 @@
 <%= form_with(model: practice, lcoal: true) do |f| %>
+  <div class="form-group">
   <%= f.label :name %>
-  <%= f.text_field :name, placeholder: "Practice of?" %>
+  <%= f.text_field :name, placeholder: "Practice of?", class: "form-control" %>
   <%= f.label :hours %>
-  <%= f.text_field :hours, placeholder: "Duration" %>
+  <%= f.text_field :hours, placeholder: "Duration", class: "form-control" %>
   <%= f.label :group %>
   <% Group.all.each do |group| %>
-           <%= check_box_tag "practice[group_ids][]", group.id, @practice.group_ids.include?(group.id) %>
-          <%= group.name %>
+      <div class="d-flex justify-content-start">
+        <%= check_box_tag "practice[group_ids][]", group.id, @practice.group_ids.include?(group.id) %>
+        <%= group.name %>
+      </div>
   <% end %>
-  <%= f.submit  class: "btn btn-primary"%>
+  <%= f.submit  class: "btn btn-primary btn-lg btn-block"%>
+  </div>
 <% end %>

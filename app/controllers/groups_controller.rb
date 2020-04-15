@@ -1,7 +1,7 @@
 class GroupsController < ApplicationController
   before_action :logged_in_user, only: [:create, :destroy, :index, :new, :edit]
   before_action :correct_user, only: :destroy
-  before_action :set_group, only: %i[show edit update]
+  before_action :set_group, only: %i[show edit update destroy]
   def new
     @group = Group.new
   end
@@ -28,7 +28,8 @@ class GroupsController < ApplicationController
       flash[:notice] = "Group is updated!"
       redirect_to groups_path
     else
-      redirect_to 'edit', danger: 'Update Failed!'
+      flash[:danger] = "Group failed to be updated"
+      redirect_to 'edit'
     end
   end
 

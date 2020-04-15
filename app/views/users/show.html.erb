@@ -1,3 +1,22 @@
-<%= image_tag(@user.image) if @user.image.attached? %>
-<%= @user.username %>
-<%= link_to "All groups", groups_path %>
+<div class="row align-items-center">
+  <div class="col-md-6">
+    <div class="text-center">
+      <%= image_tag(@user.image) if @user.image.attached? %>
+      <h1 class="display-2">
+        <%= @user.username %>
+      </h1>
+      <div>
+        <h4>
+        <%= link_to "All Groups", groups_path %>
+        </h4>
+        <h4>
+        <%= link_to "All Individual practice", practices_path %>
+        </h4>
+        <h4>
+        <%= link_to "All Group practice", groups_path %>
+        </h4>
+      </div>
+    </div>
+  </div>
+</div>
+

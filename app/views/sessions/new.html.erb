@@ -1,11 +1,13 @@
 <h1>Log in</h1>
-<div class="row">
-  <div class = "col-md-6">
-    <%= form_with(url: login_path, scope: :session, local:true) do |f| %>
-    <%= f.label :username %>
-      <%= f.text_field :username, placeholder: "Enter your user name" %>
-      <%= f.submit "Log in"%>
-    <% end %>
-    <p>If you are new user? <%= link_to "Sign up", root_path %></p>
-  </div>
+<div class="col-md-6">
+  <%= form_with(url: login_path, scope: :session, local: true) do |f| %>
+    <div class="form-group">
+      <%= f.label :username %>
+      <%= f.text_field :username, placeholder: "Enter your user name", class: "form-control" %>
+    </div>
+
+    <%= f.submit "Log in", class: "btn btn-primary" %>
+  <% end %>
+  <p>If you are new user? <%= link_to "Sign up", root_path %></p>
 </div>
+

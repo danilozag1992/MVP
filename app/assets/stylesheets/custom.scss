@@ -1,4 +1,23 @@
+@import "bootstrap-sprockets";
 @import "bootstrap";
 
+/* mixins, variables, etc. */
 
+$gray-medium-light: #eaeaea;
+$black: #161b1c;
 
+@mixin box_sizing {
+  -moz-box-sizing:    border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing:         border-box;
+}
+body{
+  padding-top: 100px;
+}
+.navbar{
+  background-color: #3293a8;
+}
+.navbar-inverse .navbar-nav > li > a{
+  color: $black;
+  font-size: 20px;
+}
