@@ -6,25 +6,25 @@ class PracticesController < ApplicationController
   end
 
   def index
-    @practices = current_user.practices
+    @practices = current_user.practices.with_group
   end
 
   def not_group
-    @practice_not_group = current_user.practices.without_group
+    @practices = current_user.practices.without_group
   end
 
   def create
     @practice = current_user.practices.build(practice_params)
+    @practice.groups << Group.find(params[:practice][:group_ids]) if params[:practice][:group_ids]
     if @practice.save
+      flash[:notice] = "Practice Created"
       if params[:practice][:group_ids]
-        flash[:notice] = "Created with group"
         redirect_to practices_path
       else
-        flash[:notice] = "Created without a group"
         redirect_to not_group_path
       end
     else
-      flash[:danger] = "Creation failed"
+      flash[:notice] = "Not Created!"
       render 'new'
     end
   end
@@ -41,9 +41,11 @@ class PracticesController < ApplicationController
     end
   end
 
-  def edit; end
+  def edit;
+  end
 
-  def show; end
+  def show;
+  end
 
   def destroy
     @practice.destroy
@@ -54,7 +56,7 @@ class PracticesController < ApplicationController
   private
 
   def practice_params
-    params.require(:practice).permit(:name, :hours, :coach_id, :group_ids)
+    params.require(:practice).permit(:name, :hours, :coach_id, group_ids: [])
   end
 
   def set_practice

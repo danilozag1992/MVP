@@ -1,2 +1,15 @@
-<%= render partial: "multiply_practice", locals: {practices: @practice_not_group, allow_change: true} %>
+<table class="project container">
+
+  <tbody>
+  <% @practices.each do |practice| %>
+    <tr>
+      <td class="pjname task"><%= link_to "#{practice.name}", practice %>
+        <p class="date"><%= practice.created_at.strftime("%b %d, %Y") %></p>
+      </td>
+      <td class="hours task"><%= practice.hours%></td>
+    </tr>
+  <% end %>
+  </tbody>
+</table>
+
 <%= button_to 'Add Practice', new_practice_path, method: :get, class: "btn btn-primary btn-lg btn-block" %>
