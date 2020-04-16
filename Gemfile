@@ -12,6 +12,9 @@ gem 'bootstrap-sass',             '3.4.1'
 gem 'font-awesome-sass', '~> 5.12.0'
 gem 'jquery-rails'
 gem 'popper_js', '~> 1.16.0'
+gem 'carrierwave', '~> 2.0'
+gem 'fog',                     '1.38.0'
+gem "mini_magick"
 # Use postgresql as the database for Active Record
 gem 'pg', '>= 0.18', '< 2.0'
 # Use Puma as the app server

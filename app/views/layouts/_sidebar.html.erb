@@ -1,0 +1,33 @@
+<% if logged_in? %>
+  <aside class="side-bar">
+    <div class="user_info">
+      <%= image_tag(current_user.image.url, alt: 'Image', class: "prof") if current_user.image? %>
+      <h2><%= current_user.username %></h2>
+    </div>
+    <nav class="nav-bar">
+      <ul>
+        <li>
+          <div>
+            <%= link_to 'All Group Practices', practices_path %>
+          </div>
+        </li>
+        <li>
+          <div>
+            <%= link_to 'All Individual Practices', not_group_path %>
+          </div>
+        </li>
+        <li>
+          <div>
+            <%= link_to 'All My Groups', groups_path %>
+          </div>
+        </li>
+        <li>
+          <div>
+            <%= link_to "Log out", logout_path, method: :delete %>
+          </div>
+        </li>
+        <% else %>
+      </ul>
+    </nav>
+  </aside>
+<% end %>

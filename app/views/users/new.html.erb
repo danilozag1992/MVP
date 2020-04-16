@@ -1,7 +1,11 @@
 <h1>Sign up!</h1>
 <%= form_with(model: @user, local: true) do |f| %>
   <div class="form-group">
-    <%= f.file_field :image, class: "form-control" %>
+    <div class="field">
+    <span class="picture">
+      <%= f.file_field :image %>
+    </span>
+    </div>
     <%= f.label :username %>
     <%= f.text_field :username, class: "form-control" %>
     <%= f.submit "Create my account" %>
