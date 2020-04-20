@@ -56,7 +56,7 @@ class PracticesController < ApplicationController
   private
 
   def practice_params
-    params.require(:practice).permit(:name, :hours, :coach_id, group_ids: [])
+    params.require(:practice).permit(:name, :hours, :coach_id, :start_time, :end_time, group_ids: [])
   end
 
   def set_practice

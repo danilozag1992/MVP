@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_04_13_170249) do
+ActiveRecord::Schema.define(version: 2020_04_20_110934) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -60,6 +60,8 @@ ActiveRecord::Schema.define(version: 2020_04_13_170249) do
     t.bigint "coach_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.datetime "start_time"
+    t.datetime "end_time"
     t.index ["coach_id"], name: "index_practices_on_coach_id"
   end
 
@@ -67,6 +69,7 @@ ActiveRecord::Schema.define(version: 2020_04_13_170249) do
     t.string "username"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.string "image"
     t.index ["username"], name: "index_users_on_username", unique: true
   end
 

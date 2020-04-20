@@ -1,12 +1,22 @@
-<table class="project container">
-
+<table class="table">
+  <thead>
+  <tr>
+    <th scope="col">Practice</th>
+    <th scope="col">Starts</th>
+    <th scope="col">Ends</th>
+    <th scope="col">Created at</th>
+    <th scope="col">Duration</th>
+  </tr>
+  </thead>
   <tbody>
   <% @practices.each do |practice| %>
     <tr>
-      <td class="pjname task"><%= link_to "#{practice.name}", practice %>
-        <p class="date"><%= practice.created_at.strftime("%b %d, %Y") %></p>
+      <td><%= link_to "#{practice.name}", practice %>
+      <td><%= readable_time(practice.start_time) %>e</td>
+      <td><%= readable_time(practice.end_time) %></td>
+       <td> <p><%= practice.created_at.strftime("%b %d, %Y") %></p>
       </td>
-      <td class="hours task"><%= practice.hours%></td>
+      <td><%= practice.hours%></td>
     </tr>
   <% end %>
   </tbody>

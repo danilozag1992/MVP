@@ -2,7 +2,9 @@
   <thead>
   <tr>
     <th scope="col">name</th>
-    <th scope="col">time</th>
+    <th scope="col">Duration</th>
+    <th scope="col">Starts</th>
+    <th scope="col">Ends</th>
     <th scope="col">date</th>
   </tr>
   </thead>
@@ -11,6 +13,8 @@
     <tr>
       <td><%= link_to "#{practice.name}", practice %></td>
       <td><%= practice.hours %> hs</td>
+      <td><%= readable_time(practice.start_time) %></td>
+      <td><%= readable_time(practice.end_time) %></td>
       <td><%= practice.created_at.strftime("%b %d, %Y").downcase %></td>
     </tr>
   <% end %>

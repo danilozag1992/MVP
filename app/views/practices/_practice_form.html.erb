@@ -4,6 +4,14 @@
     <%= f.text_field :name, placeholder: "Practice of?", class: "form-control" %>
     <%= f.label :hours %>
     <%= f.text_field :hours, placeholder: "Duration", class: "form-control" %>
+     <div class="field">
+       <%= f.label :start_time %>
+       <%= f.datetime_select :start_time %>
+     </div>
+    <div class="field">
+      <%= f.label :end_time %>
+      <%= f.datetime_select :end_time %>
+    </div>
     <%= f.label :group %>
     <% Group.all.each do |group| %>
       <div class="d-flex justify-content-start">

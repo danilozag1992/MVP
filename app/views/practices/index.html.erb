@@ -1,2 +1,14 @@
-<%= render :partial => "multiply_practice", locals: {practices: @practices, allow_change: true} %>
-<%= button_to 'Add Practice', new_practice_path, method: :get, class: "btn btn-primary btn-lg btn-block" %>
+<div class="container">
+  <% unless current_user.practices.any? %>
+  <%= render 'practices_cta' %>
+    <% else %>
+    <%= render :partial => "multiply_practice", locals: {practices: @practices, allow_change: true} %>
+    <% end %>
+</div>
+
+
+
+
+
+<%#= render :partial => "multiply_practice", locals: {practices: @practices, allow_change: true} %>
+<%#= button_to 'Add Practice', new_practice_path, method: :get, class: "btn btn-primary btn-lg btn-block" %>
