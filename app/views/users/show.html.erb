@@ -5,6 +5,26 @@
       <h1 class="display-2">
         <%= @user.username %>
       </h1>
+      <div class="container">
+        <table class="table table-bordered">
+          <thead>
+          <tr>
+            <th scope="col">Group name</th>
+            <th scope="col">Practice name</th>
+          </tr>
+          </thead>
+          <tbody>
+          <tr>
+            <% @user.practices.each do |practice| %>
+            <% practice.groups.each do |group| %>
+              <td><%= group.name %></td>
+              <% end %>
+            <td><%= practice.name %></td>
+            </tr>
+            <% end %>
+          </tbody>
+        </table>
+      </div>
       <div>
         <h4>
           <%= link_to "All Group Practices", practices_path %>
@@ -14,6 +34,9 @@
         </h4>
         <h4>
           <%= link_to "All Groups", groups_path %>
+        </h4>
+        <h4>
+          <%= link_to "All Users", users_path %>
         </h4>
       </div>
     </div>
