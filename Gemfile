@@ -14,6 +14,7 @@ gem 'jquery-rails'
 gem 'popper_js', '~> 1.16.0'
 gem 'simple_calendar', '~> 2.0'
 gem 'trix', '~> 0.9.9'
+
 # Use postgresql as the database for Active Record
 gem 'pg', '>= 0.18', '< 2.0'
 # Use Puma as the app server

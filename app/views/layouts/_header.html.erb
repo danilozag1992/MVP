@@ -23,15 +23,6 @@
               <li><%= link_to "All Group Practices", practices_path %></li>
               <li><%= link_to "External Practices", not_group_path %></li>
               <li><%= link_to "All Groups", groups_path %></li>
-              <%= form_tag(search_page_path, :method => "get",
-                           class: 'navbar-form navbar-left') do %>
-                <div class="input-group">
-                  <%= search_field_tag :search, params[:search], placeholder: "Search", class: "form-control" %>
-                  <div class="input-group-btn">
-                    <%= button_tag "", :class => 'btn btn-info glyphicon glyphicon-search',:name => nil%>
-                  </div>
-                </div>
-              <% end %>
               <li class="divider"></li>
               <li>
                 <%= link_to "Log out", logout_path, method: :delete %>

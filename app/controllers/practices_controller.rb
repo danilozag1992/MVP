@@ -39,14 +39,17 @@ class PracticesController < ApplicationController
   end
 
   def update
+    @practice.groups << Group.find(params[:practice][group_ids]) if params[:practice][:group_ids]
     if @practice.update(practice_params)
+      flash[:notice] = "Practice updated"
       if params[:practice][:group_ids]
-        redirect_to practices_path, notice: 'Updated'
+        redirect_to practices_path
       else
-        redirect_to not_group_path, notice: 'project updated!'
+        redirect_to not_group_path
       end
     else
-      redirect_to 'edit', danger: 'project update failed.'
+      flash[:notice] = 'Update failed'
+      redirect_to 'edit'
     end
   end
 

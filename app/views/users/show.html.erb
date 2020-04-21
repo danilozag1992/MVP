@@ -1,11 +1,7 @@
 <div class="row align-items-center">
-  <div class="col-md-6">
     <div class="text-center">
-      <%= image_tag(@user.image) if @user.image.attached? %>
-      <h1 class="display-2">
-        <%= @user.username %>
-      </h1>
       <div class="container">
+        <div class="col-md-10 table-wrap">
         <table class="table table-bordered">
           <thead>
           <tr>
@@ -24,20 +20,6 @@
             <% end %>
           </tbody>
         </table>
-      </div>
-      <div>
-        <h4>
-          <%= link_to "All Group Practices", practices_path %>
-        </h4>
-        <h4>
-          <%= link_to "All Individual practices", not_group_path %>
-        </h4>
-        <h4>
-          <%= link_to "All Groups", groups_path %>
-        </h4>
-        <h4>
-          <%= link_to "All Users", users_path %>
-        </h4>
       </div>
     </div>
   </div>

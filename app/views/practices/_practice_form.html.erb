@@ -14,10 +14,8 @@
     </div>
     <%= f.label :group %>
     <% Group.all.each do |group| %>
-      <div class="d-flex justify-content-start">
         <%= check_box_tag "practice[group_ids][]", group.id, @practice.group_ids.include?(group.id) %>
         <%= group.name %>
-      </div>
     <% end %>
     <%= f.submit class: "btn btn-primary btn-lg btn-block" %>
   </div>
