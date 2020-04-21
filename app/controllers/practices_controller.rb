@@ -9,6 +9,15 @@ class PracticesController < ApplicationController
     @practices = current_user.practices.with_group
   end
 
+  def search
+    if params[:search].blank?
+      redirect_to(practices_path, alert: "Empty field!") and return
+    else
+      @practice = params[:search].downcase
+      @results = Practice.all.where("lower(name) LIKE :search", search: @practice)
+    end
+  end
+
   def not_group
     @practices = current_user.practices.without_group
   end

@@ -3,6 +3,7 @@
   <%= render 'practices_cta' %>
     <% else %>
     <%= render :partial => "multiply_practice", locals: {practices: @practices, allow_change: true} %>
+    <%= button_to 'Add Practice', new_practice_path, method: :get, class: "btn btn-primary btn-lg btn-block" %>
     <% end %>
 </div>
 

@@ -1,7 +1,7 @@
 class Practice < ApplicationRecord
   belongs_to :coach, class_name: 'User'
   has_many :practice_groups
-  has_many :groups, through: :practice_groups
+  has_many :groups, -> {distinct}, through: :practice_groups
 
   default_scope { order(created_at: :desc) }
   scope :with_group, -> {joins(:practice_groups).distinct}

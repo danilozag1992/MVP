@@ -8,5 +8,6 @@ Rails.application.routes.draw do
   resources :groups
   resources :practices
   get  '/not_group', to: 'practices#not_group'
+  get 'search', to:"practices#search", :as => 'search_page'
 
 end
