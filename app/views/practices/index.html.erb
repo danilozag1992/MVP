@@ -1,4 +1,5 @@
 <div class="col-md-10 practices">
+  <%= render 'search_form' %>
   <% unless current_user.practices.any? %>
   <%= render 'practices_cta' %>
     <% else %>
