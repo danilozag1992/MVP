@@ -3,6 +3,7 @@
 <table class="table">
   <thead>
   <tr>
+    <th scope="col">icon</th>
     <th scope="col">name</th>
     <th scope="col">date</th>
   </tr>
@@ -10,13 +11,19 @@
   <tbody>
   <% @groups.each do |group| %>
     <tr>
+    <td>
+      <% if group.icon %>
+        <%= image_tag("icons/#{group.icon}.svg", size: "20",class:"card-img mt-4" )  %>
+      <%end%>
+      </td>
       <td><%= link_to "#{group.name}", group %></td>
+      <td>
       <td><%= group.created_at.strftime("%Y-%m-%d").downcase %></td>
     </tr>
   <% end %>
   </tbody>
 </table>
-<%= button_to 'add new group', new_group_path, method: :get, class: 'btn btn-primary add-new-group' %>
+<%= link_to 'Create New', new_group_path, method: :get, class: 'btn btn-primary add-new-group' %>
 <h3>
   <%= link_to 'Back', current_user, method: :get %>
 </h3>

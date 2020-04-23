@@ -13,19 +13,19 @@ class GroupsController < ApplicationController
       flash[:success] = "Group created!"
       redirect_to groups_path
     else
-      flash[:danger] = "Faild to create a group!"
+      flash.now[:danger] = "Failed to create a group!"
       render 'new'
     end
   end
 
   def destroy
     @group.destroy
-    flash[:notice] = "Group is delted"
+    flash.now[:notice] = "Group is deleted"
     redirect_to groups_path
   end
 
   def index
-    @groups = Group.all.order(name: :asc)
+    @groups = Group.all.order(created_at: :desc)
   end
 
   def update
@@ -33,7 +33,7 @@ class GroupsController < ApplicationController
       flash[:notice] = "Group is updated!"
       redirect_to groups_path
     else
-      flash[:danger] = "Group failed to be updated"
+      flash.now[:danger] = "Group failed to be updated"
       redirect_to 'edit'
     end
   end
@@ -45,7 +45,7 @@ class GroupsController < ApplicationController
   end
 
   def group_params
-    params.require(:group).permit(:name, :user_id)
+    params.require(:group).permit(:name, :icon, :user_id)
   end
 
   def correct_user

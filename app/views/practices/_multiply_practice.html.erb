@@ -1,6 +1,7 @@
 <table class="table">
   <thead>
   <tr>
+    <th scope="col">icon</th>
     <th scope="col">name</th>
     <th scope="col">Duration</th>
     <th scope="col">Starts</th>
@@ -11,6 +12,10 @@
   <tbody>
   <% practices.each do |practice| %>
     <tr>
+      <% if practice.groups.first %>
+        <% practice_group = practice.groups.first %>
+        <td><%= image_tag("icons/#{practice_group.icon}.svg", size: "30",class:"card-img mt-4" )  %></td>
+      <%end%>
       <td><%= link_to "#{practice.name}", practice %></td>
       <td><%= practice.hours %> hs</td>
       <td><%= readable_time(practice.start_time) %></td>

@@ -17,6 +17,6 @@
         <%= check_box_tag "practice[group_ids][]", group.id, @practice.group_ids.include?(group.id) %>
         <%= group.name %>
     <% end %>
-    <%= f.submit class: "btn btn-primary btn-lg btn-block" %>
+    <%= f.submit "Create Practice", class: "btn btn-primary btn-lg btn-block" %>
   </div>
 <% end %>

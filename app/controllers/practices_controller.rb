@@ -33,7 +33,7 @@ class PracticesController < ApplicationController
         redirect_to not_group_path
       end
     else
-      flash[:notice] = "Not Created!"
+      flash.now[:danger] = "Not Created!"
       render 'new'
     end
   end
@@ -48,7 +48,7 @@ class PracticesController < ApplicationController
         redirect_to not_group_path
       end
     else
-      flash[:notice] = 'Update failed'
+      flash.now[:danger] = 'Update failed'
       redirect_to 'edit'
     end
   end
@@ -61,7 +61,7 @@ class PracticesController < ApplicationController
 
   def destroy
     @practice.destroy
-    flash[:success] = "Practice is deleted"
+    flash.now[:success] = "Practice is deleted"
     redirect_to practices_path
   end
 

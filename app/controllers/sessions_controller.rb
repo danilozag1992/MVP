@@ -5,6 +5,7 @@ class SessionsController < ApplicationController
     user = User.find_by(username: params[:session][:username].downcase)
     if user
       log_in user
+      flash[:notice] = "Logged in"
       redirect_to user
     else
       flash.now[:danger] = 'Invalid username'
@@ -14,6 +15,7 @@ class SessionsController < ApplicationController
 
   def destroy
     log_out
+    flash[:notice] = "Logged out"
     redirect_to root_url
   end
 end

@@ -2,7 +2,7 @@
   <aside class="side-bar">
     <div class="user_info">
       <h1 class="logo"> Coach </h1>
-        <%= image_tag current_user.image, class: "profile"%>
+        <%= image_tag current_user.image, class: "profile" if @current_user.image.attached? %>
         <h2 class="username"><%= current_user.username %></h2>
     </div>
 
