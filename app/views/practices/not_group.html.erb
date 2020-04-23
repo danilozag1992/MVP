@@ -1,28 +1,28 @@
 <div class="col-md-10 not-group">
   <%= render 'search_form' %>
-<table class="table">
-  <thead>
-  <tr>
-    <th scope="col">Practice</th>
-    <th scope="col">Starts</th>
-    <th scope="col">Ends</th>
-    <th scope="col">Created at</th>
-    <th scope="col">Duration</th>
-  </tr>
-  </thead>
-  <tbody>
-  <% @practices.each do |practice| %>
+  <table class="table">
+    <thead>
     <tr>
-      <td><%= link_to "#{practice.name}", practice %>
-      <td><%= readable_time(practice.start_time) %>e</td>
-      <td><%= readable_time(practice.end_time) %></td>
-       <td> <p><%= practice.created_at.strftime("%b %d, %Y") %></p>
-      </td>
-      <td><%= practice.hours%></td>
+      <th scope="col">Practice</th>
+      <th scope="col">Starts</th>
+      <th scope="col">Ends</th>
+      <th scope="col">Created at</th>
+      <th scope="col">Duration</th>
     </tr>
-  <% end %>
-  </tbody>
-</table>
+    </thead>
+    <tbody>
+    <% @practices.each do |practice| %>
+      <tr>
+        <td><%= link_to "#{practice.name}", practice %>
+        <td><%= readable_time(practice.start_time) %>e</td>
+        <td><%= readable_time(practice.end_time) %></td>
+        <td><p><%= practice.created_at.strftime("%b %d, %Y") %></p>
+        </td>
+        <td><%= practice.hours %></td>
+      </tr>
+    <% end %>
+    </tbody>
+  </table>
 
-<%= button_to 'Add Practice', new_practice_path, method: :get, class: "btn btn-primary btn-lg btn-block" %>
+  <%= button_to 'Add Practice', new_practice_path, method: :get, class: "btn btn-primary btn-lg btn-block" %>
 </div>

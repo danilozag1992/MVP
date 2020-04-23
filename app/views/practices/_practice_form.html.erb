@@ -4,18 +4,18 @@
     <%= f.text_field :name, placeholder: "Practice of?", class: "form-control" %>
     <%= f.label :hours %>
     <%= f.text_field :hours, placeholder: "Duration", class: "form-control" %>
-     <div class="field">
-       <%= f.label :start_time %>
-       <%= f.datetime_select :start_time %>
-     </div>
+    <div class="field">
+      <%= f.label :start_time %>
+      <%= f.datetime_select :start_time %>
+    </div>
     <div class="field">
       <%= f.label :end_time %>
       <%= f.datetime_select :end_time %>
     </div>
     <%= f.label :group %>
     <% Group.all.each do |group| %>
-        <%= check_box_tag "practice[group_ids][]", group.id, @practice.group_ids.include?(group.id) %>
-        <%= group.name %>
+      <%= check_box_tag "practice[group_ids][]", group.id, @practice.group_ids.include?(group.id) %>
+      <%= group.name %>
     <% end %>
     <%= f.submit "Create Practice", class: "btn btn-primary btn-lg btn-block" %>
   </div>

@@ -7,5 +7,5 @@ class Practice < ApplicationRecord
   validates :hours, presence: true
 
   scope :with_group, -> { joins(:practice_groups).distinct }
-  scope :without_group, -> { includes(:practice_groups).where(practice_groups: { group_id: nil }) }
+  scope :without_group, -> { includes(:practice_groups).where(practice_groups: {group_id: nil}) }
 end

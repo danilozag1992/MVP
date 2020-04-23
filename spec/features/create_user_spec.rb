@@ -1,4 +1,3 @@
-
 require 'rails_helper'
 
 feature 'create my account' do

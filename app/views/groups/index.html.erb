@@ -1,30 +1,30 @@
 <h1>total groups: <%= @groups.size %> </h1>
 <div class="col-md-10">
-<table class="table">
-  <thead>
-  <tr>
-    <th scope="col">icon</th>
-    <th scope="col">name</th>
-    <th scope="col">date</th>
-  </tr>
-  </thead>
-  <tbody>
-  <% @groups.each do |group| %>
+  <table class="table">
+    <thead>
     <tr>
-    <td>
-      <% if group.icon %>
-        <%= image_tag("icons/#{group.icon}.svg", size: "20",class:"card-img mt-4" )  %>
-      <%end%>
-      </td>
-      <td><%= link_to "#{group.name}", group %></td>
-      <td>
-      <td><%= group.created_at.strftime("%Y-%m-%d").downcase %></td>
+      <th scope="col">icon</th>
+      <th scope="col">name</th>
+      <th scope="col">date</th>
     </tr>
-  <% end %>
-  </tbody>
-</table>
-<%= link_to 'Create New', new_group_path, method: :get, class: 'btn btn-primary add-new-group' %>
-<h3>
-  <%= link_to 'Back', current_user, method: :get %>
-</h3>
+    </thead>
+    <tbody>
+    <% @groups.each do |group| %>
+      <tr>
+        <td>
+          <% if group.icon %>
+            <%= image_tag("icons/#{group.icon}.svg", size: "20", class: "card-img mt-4") %>
+          <% end %>
+        </td>
+        <td><%= link_to "#{group.name}", group %></td>
+        <td>
+        <td><%= group.created_at.strftime("%Y-%m-%d").downcase %></td>
+      </tr>
+    <% end %>
+    </tbody>
+  </table>
+  <%= link_to 'Create New', new_group_path, method: :get, class: 'btn btn-primary add-new-group' %>
+  <h3>
+    <%= link_to 'Back', current_user, method: :get %>
+  </h3>
 </div>

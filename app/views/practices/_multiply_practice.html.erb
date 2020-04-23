@@ -14,8 +14,8 @@
     <tr>
       <% if practice.groups.first %>
         <% practice_group = practice.groups.first %>
-        <td><%= image_tag("icons/#{practice_group.icon}.svg", size: "30",class:"card-img mt-4" )  %></td>
-      <%end%>
+        <td><%= image_tag("icons/#{practice_group.icon}.svg", size: "30", class: "card-img mt-4") %></td>
+      <% end %>
       <td><%= link_to "#{practice.name}", practice %></td>
       <td><%= practice.hours %> hs</td>
       <td><%= readable_time(practice.start_time) %></td>

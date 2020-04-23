@@ -1,7 +1,7 @@
 <div class="row align-items-center">
-    <div class="text-center">
-      <div class="container">
-        <div class="col-md-10 table-wrap">
+  <div class="text-center">
+    <div class="container">
+      <div class="col-md-10 table-wrap">
         <table class="table table-bordered">
           <thead>
           <tr>
@@ -12,13 +12,13 @@
           <tbody>
           <tr>
             <% @user.practices.each do |practice| %>
-            <% practice.groups.each do |group| %>
-              <td><%= group.name %></td>
+              <% practice.groups.each do |group| %>
+                <td><%= group.name %></td>
               <% end %>
-            <td><%= practice.name %></td>
-            </tr>
+              <td><%= practice.name %></td>
+              </tr>
             <% end %>
-          </tbody>
+            </tbody>
         </table>
       </div>
     </div>

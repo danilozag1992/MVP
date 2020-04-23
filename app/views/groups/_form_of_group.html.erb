@@ -2,16 +2,16 @@
   <div class="form-group">
     <%= f.label :name %>
     <%= f.text_field :name, placeholder: "Group name", class: "form-control" %>
-      <%= f.label :icon %><br>
-      <%= f.select(:icon, [['basketball'.capitalize, 'basketball'],
-                           ['football'.capitalize, 'football'],
-                           ['handball'.capitalize, 'handball'],
-                           ['hockey'.capitalize, 'hockey'],
-                           ['golf'.capitalize, 'golf'],
-                           ['tennis'.capitalize, 'tennis'],
-                           ['rugby'.capitalize, 'rugby'],
-                           ['athletic'.capitalize, 'athletic'],
-                           ['body-building'.capitalize, 'body-building']]) %>
+    <%= f.label :icon %><br>
+    <%= f.select(:icon, [['basketball'.capitalize, 'basketball'],
+                         ['football'.capitalize, 'football'],
+                         ['handball'.capitalize, 'handball'],
+                         ['hockey'.capitalize, 'hockey'],
+                         ['golf'.capitalize, 'golf'],
+                         ['tennis'.capitalize, 'tennis'],
+                         ['rugby'.capitalize, 'rugby'],
+                         ['athletic'.capitalize, 'athletic'],
+                         ['body-building'.capitalize, 'body-building']]) %>
     <%= f.submit class: "btn btn-primary" %>
   </div>
 <% end %>

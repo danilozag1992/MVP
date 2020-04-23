@@ -8,6 +8,6 @@
   <%= @practice.end_time %>
 </h1>
 <% if current_user %>
-<%= button_to 'edit', edit_practice_path(@practice), method: :get, class: "btn btn-primary btn-lg btn-block" %>
-<%= button_to 'Destroy', @practice, method: :delete,class: "btn btn-primary btn-lg btn-block" , data: { confirm: 'Are you sure?' } %>
+  <%= button_to 'edit', edit_practice_path(@practice), method: :get, class: "btn btn-primary btn-lg btn-block" %>
+  <%= button_to 'Destroy', @practice, method: :delete, class: "btn btn-primary btn-lg btn-block", data: {confirm: 'Are you sure?'} %>
 <% end %>
