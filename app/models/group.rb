@@ -4,5 +4,6 @@ class Group < ApplicationRecord
   has_many :practices, -> { distinct }, through: :practice_groups, dependent: :destroy
   before_save { self.name = name.downcase }
   validates :name, presence: true, length: { minimum: 3, maximum: 20 }, case_sensitive: false, numericality: false
-  validates_format_of :name, :with => /^[a-z]+$/i, multiline: true
+  validates_format_of :name, with: /^[a-z]+$/i, multiline: true
 end
+
