@@ -11,7 +11,7 @@ class PracticesController < ApplicationController
 
   def search
     if params[:search].blank?
-      redirect_to(practices_path, alert: 'Empty field!') and return
+      redirect_to(practices_path, alert: 'Empty field!')
     else
       @practice = params[:search].downcase
       @results = Practice.all.where('lower(name) LIKE :search', search: @practice)

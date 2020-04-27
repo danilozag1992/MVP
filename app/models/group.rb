@@ -6,4 +6,3 @@ class Group < ApplicationRecord
   validates :name, presence: true, length: { minimum: 3, maximum: 20 }, case_sensitive: false, numericality: false
   validates_format_of :name, with: /^[a-z]+$/i, multiline: true
 end
-

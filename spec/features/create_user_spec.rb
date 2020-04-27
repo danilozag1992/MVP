@@ -13,4 +13,3 @@ feature 'create my account' do
     expect(page).to have_content('If you already have account, please Login')
   end
 end
-
