@@ -29,15 +29,15 @@ Metrics/BlockLength:
   Max: 30
 
 Style/Documentation:
-  Enabled: false
+  Enabled: true
 Style/ClassAndModuleChildren:
-  Enabled: false
+  Enabled: true
 Style/EachForSimpleLoop:
-  Enabled: false
+  Enabled: true
 Style/AndOr:
-  Enabled: false
+  Enabled: true
 Style/DefWithParentheses:
-  Enabled: false
+  Enabled: true
 Style/FrozenStringLiteralComment:
   EnforcedStyle: never
 
