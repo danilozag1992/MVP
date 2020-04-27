@@ -3,6 +3,7 @@
 This is Ruby on Rails capstone project, part of the curriculum at [Microverse](https://www.microverse.org/). This is event scheduling app, I made it for somebody who is Coach of some sport, he/her will be able to Schedule practice in desired time.
 
 ## Link to live Demo
+![Live](https://infinite-spire-29957.herokuapp.com/)
 
 ## Built With
 - Ruby 
