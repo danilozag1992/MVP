@@ -79,7 +79,9 @@ test:
 #     url: <%= ENV['DATABASE_URL'] %>
 #
 production:
-  <<: *default
+  adapter: postgresql
+  encoding: unicode
+  pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
   database: mvp_production
   username: mvp
   password: <%= ENV['MVP_DATABASE_PASSWORD'] %>
