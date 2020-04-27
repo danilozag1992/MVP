@@ -7,7 +7,7 @@ class LoginForm
 
   def login_as(user)
     fill_in 'Username', with: user.username
-    click_link("Log in", match: :first)
+    click_link('Log in', match: :first)
     self
   end
 end

@@ -11,10 +11,10 @@ class PracticesController < ApplicationController
 
   def search
     if params[:search].blank?
-      redirect_to(practices_path, alert: "Empty field!") and return
+      redirect_to(practices_path, alert: 'Empty field!') and return
     else
       @practice = params[:search].downcase
-      @results = Practice.all.where("lower(name) LIKE :search", search: @practice)
+      @results = Practice.all.where('lower(name) LIKE :search', search: @practice)
     end
   end
 
@@ -26,14 +26,14 @@ class PracticesController < ApplicationController
     @practice = current_user.practices.build(practice_params)
     @practice.groups << Group.find(params[:practice][:group_ids]) if params[:practice][:group_ids]
     if @practice.save
-      flash[:notice] = "Practice Created"
+      flash[:notice] = 'Practice Created'
       if params[:practice][:group_ids]
         redirect_to practices_path
       else
         redirect_to not_group_path
       end
     else
-      flash.now[:danger] = "Not Created!"
+      flash.now[:danger] = 'Not Created!'
       render 'new'
     end
   end
@@ -41,7 +41,7 @@ class PracticesController < ApplicationController
   def update
     @practice.groups << Group.find(params[:practice][group_ids]) if params[:practice][:group_ids]
     if @practice.update(practice_params)
-      flash[:notice] = "Practice updated"
+      flash[:notice] = 'Practice updated'
       if params[:practice][:group_ids]
         redirect_to practices_path
       else
@@ -53,15 +53,13 @@ class PracticesController < ApplicationController
     end
   end
 
-  def edit;
-  end
+  def edit; end
 
-  def show;
-  end
+  def show; end
 
   def destroy
     @practice.destroy
-    flash.now[:success] = "Practice is deleted"
+    flash.now[:success] = 'Practice is deleted'
     redirect_to practices_path
   end
 

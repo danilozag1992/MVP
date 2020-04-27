@@ -3,6 +3,7 @@ class User < ApplicationRecord
   has_one_attached :image
   has_many :groups, dependent: :destroy
   has_many :practices, foreign_key: :coach_id, dependent: :destroy
-  validates :username, presence: true, length: {minimum: 3, maximum: 20},
-            uniqueness: true
+  validates :username, presence: true, length: { minimum: 3, maximum: 20 },
+             uniqueness: true
 end
+
