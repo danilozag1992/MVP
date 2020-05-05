@@ -1,6 +1,6 @@
 ![MVP](https://raw.githubusercontent.com/danilozag1992/MVP/development/app/assets/images/project.png)
 ## Description
-This is Ruby on Rails capstone project, part of the curriculum at [Microverse](https://www.microverse.org/). This is event scheduling app, I made it for somebody who is Coach of some sport, he/her will be able to Schedule practice in desired time.
+This is Ruby on the Rails capstone project, part of the curriculum at [Microverse](https://www.microverse.org/). This is an event scheduling app, I made it for somebody who is Coach of some sport, he/she will be able to Schedule practice in the desired time.
 
 ## Link to live Demo
 [Live MVP](https://infinite-spire-29957.herokuapp.com/)
@@ -14,19 +14,19 @@ This is Ruby on Rails capstone project, part of the curriculum at [Microverse](h
 
 ## Features
 - User can signup/login using his/her username
-- User can create, edit, delete Group or Practice, dependent of practice(is it individual or group) 
+- User can create, edit, delete Group or Practice, dependent of practice(is it, individual or group) 
 - User can assign practice to group
 - User can see list of Coaches, Groups, Group Practices and Individual Practices
 - User can search desired practice
-- User can see date and time of the scheduled practice
-# rspec-rails [![Build Status][]][travis-ci] [![Code Climate][]][code-climate] [![Gem Version][]](gem-version)
+- User can see the date and time of the scheduled practice
+# RSpec-rails [![Build Status][]][travis-ci] [![Code Climate][]][code-climate] [![Gem Version][]](gem-version)
 
-`rspec-rails` brings the [RSpec][] testing framework to [Ruby on Rails][]
+`RSpec-rails` brings the [RSpec][] testing framework to [Ruby on Rails][]
 as a drop-in alternative to its default testing framework, Minitest.
 
 In RSpec, tests are not just scripts that verify your application code.
 They’re also specifications (or _specs,_ for short):
-detailed explanations of how the application is supposed to behave,
+detailed explanations of how the application is supposed to behave
 expressed in plain English.
 
 Use **[`rspec-rails` 3.x][]** for Rails earlier than 5.0.
@@ -45,7 +45,7 @@ Use **[`rspec-rails` 1.x][]** for Rails 2.x.
 
 ## Installation
 
-**IMPORTANT** This README / branch refers to the current development build.
+**IMPORTANT** This README/branch refers to the current development build.
 See the `4-0-maintenance` branch on Github if you want or require the latest stable release.
 
 1. Add `rspec-rails` to **both** the `:development` and `:test` groups
