@@ -19,6 +19,36 @@ This is Ruby on the Rails capstone project, part of the curriculum at [Microvers
 - User can see list of Coaches, Groups, Group Practices and Individual Practices
 - User can search desired practice
 - User can see the date and time of the scheduled practice
+
+## Usage
+
+> Clone the repository to your local machine
+
+```sh
+$ git clone https://github.com/danilozag1992/MVP.git
+```
+> cd into the directory
+
+```sh
+$ cd MVP
+```
+##### To create Database
+```sh
+$ rails db:create
+```
+##### Run Migrations
+```sh
+$ rails db:migrate
+```
+##### Install Gems
+```sh
+$ bundle install
+```
+##### Run Server
+```sh
+$ rails s
+```
+
 # RSpec-rails [![Build Status][]][travis-ci] [![Code Climate][]][code-climate] [![Gem Version][]](gem-version)
 
 `RSpec-rails` brings the [RSpec][] testing framework to [Ruby on Rails][]
