@@ -1,3 +1,4 @@
+## Screenshot and Video
 [![MVP](https://raw.githubusercontent.com/danilozag1992/MVP/development/app/assets/images/project.png)](https://www.loom.com/share/1091e1d8f43f454296b27d90f81f90b1)
 ## Description
 This is Ruby on the Rails capstone project, part of the curriculum at [Microverse](https://www.microverse.org/). This is an event scheduling app, I made it for somebody who is Coach of some sport, he/she will be able to Schedule practice in the desired time.
