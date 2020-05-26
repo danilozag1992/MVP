@@ -114,3 +114,7 @@ See the `4-0-maintenance` branch on Github if you want or require the latest sta
          create  spec/spec_helper.rb
          create  spec/rails_helper.rb
    ```
+## Contact
+[Email](mailto:danilozagarcanin@gmail.com)
+[Linkedin](https://www.linkedin.com/in/danilo-zagarcanin-88169b185/)
+[Twitter](https://twitter.com/danilo96061514)
