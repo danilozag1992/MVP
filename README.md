@@ -15,7 +15,7 @@ This is Ruby on Rails capstone project, part of the curriculum at [Microverse](h
 
 ## Features
 - User can signup/login using his/her username
-- User can create, edit, delete Group or Practice, dependent of practice(is it, individual or group) 
+- User can create, edit, delete Group or Practice, dependent of practice (is it, individual or group) 
 - User can assign practice to group
 - User can see list of Coaches, Groups, Group Practices and Individual Practices
 - User can search desired practice
